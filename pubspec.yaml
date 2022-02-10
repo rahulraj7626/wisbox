@@ -1,0 +1,53 @@
+name: nexmat
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.4
+  image_picker: ^0.8.4+5
+  firebase_core: ^1.11.0
+  firebase_storage: ^10.2.5
+
+  cupertino_icons: ^1.0.3
+  cached_network_image: ^3.1.0
+  carousel_slider: ^4.0.0
+  dio: ^4.0.1
+  firebase_messaging: ^10.0.9
+#  flutter_local_notifications: ^9.0.1
+  get: ^4.3.8
+  image_cropper: ^1.4.1
+  # image_picker: ^0.8.4+4
+  intl: ^0.17.0
+  pin_code_fields: ^7.3.0
+  shared_preferences: ^2.0.8
+  url_launcher: ^6.0.2
+  flutter_svg: ^0.23.0+1
+  visibility_detector: ^0.2.2
+  fluttertoast: ^8.0.8
+  mapbox_search: ^3.0.1+1
+  location: ^4.3.0
+  google_sign_in: ^5.2.1
+  flutter_facebook_auth: ^3.5.3
+  razorpay_flutter: ^1.2.7
+  fl_chart: ^0.40.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/icons/
+    

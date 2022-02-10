@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412973542224",
+    "project_id": "wisbox-ee342",
+    "storage_bucket": "wisbox-ee342.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412973542224:android:0e5eb1249b73e195751a55",
+        "android_client_info": {
+          "package_name": "com.kumarsunil17.wisbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412973542224-mvnmhalb2ejlv5fvp3h18o68tjj07eve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB1GpeMGGBYBGhjqo2_bqoFPUVwjcL_Co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412973542224-mvnmhalb2ejlv5fvp3h18o68tjj07eve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

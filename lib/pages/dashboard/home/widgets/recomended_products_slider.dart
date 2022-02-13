@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:nexmat/utils/constants.dart';
 
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
@@ -42,23 +43,23 @@ class RecommendedProduct extends StatelessWidget {
             Positioned(
                 right: 22,
                 top: 0,
-                width: 48,
-                height: 70,
+                width: 45,
+                height: 60,
                 child: CustomPaint(
                   painter: OfferCustomPaint(),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
+                      children:  [
                         Text(
                           "20%",
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w600),
+                              color:Colorconstants.color472198, fontWeight: FontWeight.w600),
                         ),
                         Text(
-                          "off",
-                          style: TextStyle(color: Colors.white),
+                          "OFF",
+                          style: TextStyle(color: Colorconstants.color472198),
                         ),
                       ],
                     ),
@@ -108,8 +109,9 @@ class OfferCustomPaint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xff472198)
+      ..color = const Color(0xffF7F3FF)
       ..style = PaintingStyle.fill;
+    
 
     final path = Path()
       ..moveTo(0, 0)

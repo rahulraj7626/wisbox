@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:nexmat/widgets/text_widget.dart';
 
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
@@ -17,7 +19,8 @@ class MostTrendingStoreTile extends StatelessWidget {
       aspectRatio: 0.95,
       child: Stack(
         children: [
-          const Positioned.fill(child: ColoredBox(color: Color(0xffDFDBFF))),
+          const Positioned.fill(child: ColoredBox(color: Color(0xffCEC8FF
+))),
           Positioned(
               top: 48,
               bottom: 48,
@@ -26,7 +29,8 @@ class MostTrendingStoreTile extends StatelessWidget {
               child: const ColoredBox(color: Color(0x4d7a69ff))),
           Positioned(
               top: 22,
-              left: 32,
+              left: 45,
+
               child: Material(
                 type: MaterialType.circle,
                 clipBehavior: Clip.antiAlias,
@@ -51,27 +55,37 @@ class MostTrendingStoreTile extends StatelessWidget {
               top: 100,
               left: 32,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                crossAxisAlignment: CrossAxisAlignment.center,
+                
+                children:  [
                   Text(
-                    "CAESARS",
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900),
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    "Awaits you",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        fontStyle: FontStyle.italic),
-                  ),
+                "CAESARS",
+                style: GoogleFonts.ebGaramond(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.normal,
+                  fontSize:31,
+                ),
+                textScaleFactor: 1,
+              ),
+                  const SizedBox(height: 4),
+                Text(
+                "awaits you",
+                style: GoogleFonts.ebGaramond(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                  fontSize:19,
+                ),
+                textScaleFactor: 1,
+              ), 
                 ],
               )),
           Positioned(
               right: 38,
               top: 22,
-              bottom: 100,
-              width: 140,
+              bottom: 94,
+              width: 174,
               child: Material(
                 clipBehavior: Clip.antiAlias,
                 shape: RoundedRectangleBorder(
@@ -83,14 +97,14 @@ class MostTrendingStoreTile extends StatelessWidget {
                 ),
               )),
           const Positioned(
-              height: 160,
-              bottom: 16,
-              width: 80,
+              height: 200,
+              bottom: 40,
+              width: 90,
               left: 16,
               child: ColoredBox(color: Color(0xffD9E2FF))),
           Positioned(
               height: 200,
-              bottom: 32,
+              bottom: 50,
               width: 140,
               left: 32,
               child: Material(
@@ -110,7 +124,7 @@ class MostTrendingStoreTile extends StatelessWidget {
               height: 33,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text("Visit Now"),
+                child: textWidget("Visit now", Colors.white, FontWeight.w400, 14.22),
               ))
         ],
       ),

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nexmat/app_configs/app_assets.dart';
 import 'package:nexmat/pages/login/login_page.dart';
+import 'package:nexmat/utils/constants.dart';
 import 'package:nexmat/utils/shared_preference_helper.dart';
+import 'package:nexmat/widgets/text_widget.dart';
 
 ///
 /// Created by Sunil Kumar from Boiler plate
@@ -56,7 +58,7 @@ class _IntroPageState extends State<IntroPage> {
                       SharedPreferenceHelper.storeFirstTime();
                       Get.offAllNamed(LoginPage.routeName);
                     },
-                    child: const Text("Skip"))),
+                    child:  textWidget("Skip", Colorconstants.colorCDCDCD, FontWeight.w400, 18))),
             Expanded(
               flex: 5,
               child: PageView(
@@ -67,22 +69,17 @@ class _IntroPageState extends State<IntroPage> {
                     (index) => Column(
                           children: [
                             const Spacer(),
-                            Image.asset(avatars[index], width: Get.width / 1.5),
+                            Image.asset(avatars[index], width: Get.width / 1.5,
+                           // height: Get.height/1.8,
+                            ),
                             const Spacer(),
                             Center(
-                                child: Text(
-                              titles[index],
-                              style: const TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w600),
-                            )),
-                            const SizedBox(height: 4),
+                                child: textWidget(titles[index], Colors.black, FontWeight.w700, 41)),
+                            const SizedBox(height: 23),
                             Center(
                                 child: Padding(
                               padding: const EdgeInsets.fromLTRB(32, 0, 32, 0),
-                              child: Text(
-                                descriptions[index],
-                                textAlign: TextAlign.center,
-                              ),
+                              child: textWidget(descriptions[index], Colors.black, FontWeight.w400, 18)
                             )),
                             const Spacer(),
                           ],
@@ -90,14 +87,15 @@ class _IntroPageState extends State<IntroPage> {
               ),
             ),
             Flexible(
-              flex: 2,
+              flex: 1,
               child: Material(
                 shape: const CircleBorder(
-                    side: BorderSide(width: 2, color: Color(0xff0090ff))),
+                    side: BorderSide(width: 2, color: Color(0xffA398F9))),
                 child: Padding(
                   padding: const EdgeInsets.all(6),
                   child: Material(
-                    color: const Color(0xff0090ff),
+                    color: const Color(0xffA398F9
+),
                     shape: const CircleBorder(),
                     child: InkWell(
                       onTap: () {

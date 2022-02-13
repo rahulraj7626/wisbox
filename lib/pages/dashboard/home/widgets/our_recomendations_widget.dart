@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nexmat/pages/dashboard/home/widgets/top_recommendation_tile.dart';
+import 'package:nexmat/utils/constants.dart';
+import 'package:nexmat/widgets/text_widget.dart';
 
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
@@ -13,12 +15,15 @@ class OurRecommendations extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-          child: Text(
-            "Our Top Recommendations",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          ),
+         Padding(
+          padding:const EdgeInsets.fromLTRB(16, 0, 20, 12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              textWidget("Our Top Recomendations", Colors.black, FontWeight.w500, 20),
+              Icon(Icons.search,color: Colorconstants.color747D88,)
+            ],
+          )
         ),
         SizedBox(
             height: 75,

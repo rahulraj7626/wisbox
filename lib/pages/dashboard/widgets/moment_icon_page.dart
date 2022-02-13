@@ -12,6 +12,7 @@ import 'package:nexmat/pages/dashboard/home/widgets/sponsered_ads.dart';
 import 'package:nexmat/pages/dashboard/home/widgets/top_recommendation_tile.dart';
 import 'package:nexmat/pages/onboarding/select_location_page.dart';
 import 'package:nexmat/pages/store/all_nearby_stores.dart';
+import 'package:nexmat/utils/constants.dart';
 import 'package:nexmat/utils/shared_preference_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,6 +23,8 @@ import 'package:nexmat/pages/dashboard/widgets/moment_icon_page.dart';
 import 'package:nexmat/pages/dashboard/widgets/wallet_page.dart';
 import 'package:nexmat/pages/profile/profile_page.dart';
 import 'package:nexmat/widgets/user_circle_avatar.dart';
+
+import '../../moment_icon/top_picks.dart';
 
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
@@ -96,16 +99,17 @@ class _MomentIconPageState extends State<MomentIconPage> {
               ],
             ),
           ),
-          SizedBox(
+          Container(
+            color: Colorconstants.color8E81F4.withOpacity(.10),
               height: 230,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 children: const [
-                  DealOfDayProduct(),
-                  DealOfDayProduct(),
-                  DealOfDayProduct(),
-                  DealOfDayProduct(),
+                  DealOfDayProduct(type: dealOfTheDay.momentIcon),
+                  DealOfDayProduct(type: dealOfTheDay.momentIcon),
+                  DealOfDayProduct(type: dealOfTheDay.momentIcon),
+                  DealOfDayProduct(type: dealOfTheDay.momentIcon),
                 ],
               )),
           Align(
@@ -116,17 +120,22 @@ class _MomentIconPageState extends State<MomentIconPage> {
                     onPressed: () {}, child: const Text("Pay: ₹ 880/-")),
               )),
           const NearByIndustryWidget(),
-          GridView.builder(
-              padding: const EdgeInsets.fromLTRB(16, 16, 0, 16),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 0,
-                crossAxisSpacing: 0,
-              ),
-              itemCount: 10,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => const DealOfDayProduct())
+          Container(
+            color: Colorconstants.color8E81F4.withOpacity(.2),
+            child: GridView.builder(
+                padding: const EdgeInsets.fromLTRB(16, 16, 0, 16),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 0,
+                  crossAxisSpacing: 0,
+                  childAspectRatio: .7
+                ),
+                itemCount: 10,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) => const DealOfDayProduct(type: dealOfTheDay.blueOffer)),
+          ),
+          TopPicks()
         ],
       ),
     );

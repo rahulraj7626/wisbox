@@ -6,6 +6,7 @@ import 'package:nexmat/pages/dashboard/home/widgets/deal_of_ther_slider.dart';
 import 'package:nexmat/pages/product/product_details_page.dart';
 import 'package:nexmat/pages/profile/widgets/profile_details_page.dart';
 import 'package:nexmat/pages/store/widgets/store_deatils_slider.dart';
+import 'package:nexmat/utils/constants.dart';
 import 'package:nexmat/widgets/app_error_widget.dart';
 import 'package:nexmat/widgets/app_loader.dart';
 
@@ -39,7 +40,7 @@ class _StoreDetailsPageState extends State<StoreDetailsPage> {
       body: SafeArea(
         child: ListView(
           children: [
-            StoreDetailsSlider({}),
+            StoreDetailsSlider({"image":"https://joyfoodsunshine.com/wp-content/uploads/2020/06/homemade-chocolate-ice-cream-recipe-7.jpg"}),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
               child: Row(
@@ -93,7 +94,7 @@ class _StoreDetailsPageState extends State<StoreDetailsPage> {
                           Get.toNamed(ProductDetailsPage.routeName);
                         },
                         child: DealOfDayProduct(
-                            image: "image", name: "name", price: "price"),
+                            image: "https://joyfoodsunshine.com/wp-content/uploads/2020/06/homemade-chocolate-ice-cream-recipe-7.jpg", name: "name", price: "price",type: dealOfTheDay.home),
                       );
                     },
                     itemCount: 5))

@@ -1,52 +1,49 @@
 import 'package:flutter/material.dart';
 
-///
-/// Created by Sunil Kumar (sunil@smarttersstudio.com)
-/// On 15-11-2021 08:59 PM
-///
-class HomeTopPicksNear extends StatelessWidget {
-  const HomeTopPicksNear({Key? key}) : super(key: key);
+
+class TopPicks extends StatelessWidget {
+  const TopPicks({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // final list = [
-    //   "assets/icons/dress_category.png",
-    //   "assets/icons/shirt_category.png",
-    //   "assets/icons/watch_category.png",
-    //   "assets/icons/vegetable_category.png",
-    //   "assets/icons/coffee_category.png",
-    //   "assets/icons/electronic_category.png",
-    // ];
+  
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.fromLTRB(16, 0, 16, 5),
+          padding: EdgeInsets.fromLTRB(16, 5, 16, 5),
           child: Text(
-            "Top Picks near you",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            "Hot Picks near you",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           ),
         ),
-        ColoredBox(
-          color: const Color(0x33ab9df4),
-          child: GridView.builder(
-              itemCount: 6,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
+      SizedBox(
+        height: 240,
+        //  color: const Color(0x33ab9df4),
+          child: ListView.builder(
+         scrollDirection: Axis.horizontal,
+           itemCount: 6,
               padding: const EdgeInsets.all(16),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16),
+     
               itemBuilder: (context, index) {
-                return Material(
-                  borderRadius: BorderRadius.circular(12),
-                  clipBehavior: Clip.antiAlias,
+                return Container(
+                  margin: const EdgeInsets.all(10),
+                  height: 220,
+                width: 200,
+                 // borderRadius: BorderRadius.circular(12),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
                   child: Stack(
                     children: [
                       Positioned.fill(
-                        child: Image.network(
-                          "https://image.freepik.com/free-photo/plate-with-chocolate-topping-ice-cream-cups_23-2148505921.jpg",
-                          fit: BoxFit.cover,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.network(
+                            "https://image.freepik.com/free-photo/plate-with-chocolate-topping-ice-cream-cups_23-2148505921.jpg",
+                            fit: BoxFit.cover,
+                            height: 220,
+                            width: 200,
+                          ),
                         ),
                       ),
                       Positioned(
@@ -58,7 +55,7 @@ class HomeTopPicksNear extends StatelessWidget {
                             decoration: const BoxDecoration(
                                 gradient: LinearGradient(
                                     colors: [
-                                  Colors.black54,
+                                //  Colors.black54,
                                   Colors.transparent
                                 ],
                                     end: Alignment.topCenter,

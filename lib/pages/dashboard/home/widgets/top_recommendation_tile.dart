@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexmat/widgets/text_widget.dart';
 
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
@@ -40,21 +41,22 @@ class TopRecommendationTile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      SizedBox(height: 4),
-                      Text(
-                        "My Local Store",
-                        maxLines: 1,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 18),
+                    children: [
+                      const SizedBox(height: 4),
+                     textWidget("My Local Store", Colors.black, FontWeight.w500, 18),
+                      const SizedBox(height: 2),
+                      Row(
+                        children: const[
+                          Icon(Icons.location_on,color: Colors.grey,size: 20,),
+                          SizedBox(width: 5,),
+                          Text(
+                            "Jayadev Bihar",
+                            maxLines: 1,
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 2),
-                      Text(
-                        "Jayadev Bihar",
-                        maxLines: 1,
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                     ],
                   ),
                 )

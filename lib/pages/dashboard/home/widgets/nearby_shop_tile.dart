@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nexmat/pages/store/store_details_page.dart';
 import 'package:nexmat/utils/common_functions.dart';
+import 'package:nexmat/utils/constants.dart';
 import 'package:nexmat/utils/shared_preference_helper.dart';
 
 ///
@@ -16,6 +17,9 @@ class NearByShopTile extends StatelessWidget {
       margin: const EdgeInsets.all(16),
       clipBehavior: Clip.antiAlias,
       elevation: 2,
+       shape: RoundedRectangleBorder(
+  borderRadius: BorderRadius.circular(10),
+  ),
       child: InkWell(
         onTap: () {
           Get.toNamed(StoreDetailsPage.routeName, arguments: {"id": ""});
@@ -50,20 +54,40 @@ class NearByShopTile extends StatelessWidget {
                           ),
                         ),
                         Text("Address"),
-                        const SizedBox(height: 4),
-                        Material(
-                          color: const Color(0xffC245BA),
-                          shape: const StadiumBorder(),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(6, 4, 6, 4),
-                            child: Text(
-                              "WOW!",
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500),
+                         SizedBox(height: 4),
+                        Row(
+                          children: [
+                            Material(
+                              color: Colorconstants.color6B5BE7,
+                              shape: const StadiumBorder(),
+                              child: const Padding(
+                                padding: EdgeInsets.fromLTRB(6, 4, 6, 4),
+                                child: Text(
+                                  "WOW!",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
                             ),
-                          ),
+                            const SizedBox(width: 5,),
+                              Material(
+                              color: Colorconstants.colorA398F9
+,
+                              shape: const StadiumBorder(),
+                              child: const Padding(
+                                padding: EdgeInsets.fromLTRB(6, 4, 6, 4),
+                                child: Text(
+                                  "Amazing!",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     )),
@@ -75,9 +99,16 @@ class NearByShopTile extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text("Address"),
+                          const Text("Address",style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                             decoration: TextDecoration.underline,
+                            
+                          ),
+                          ),
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: const [
@@ -87,7 +118,14 @@ class NearByShopTile extends StatelessWidget {
                                 size: 20,
                                 color: Colors.grey,
                               ),
-                              Text("12 km"),
+                             Text("2km ",style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                         
+                            
+                          ),
+                          ),
                               SizedBox(width: 6),
                             ],
                           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexmat/widgets/text_widget.dart';
 
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
@@ -12,12 +13,9 @@ class NewOpenings extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-          child: Text(
-            "NEW Openings",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          ),
+         Padding(
+          padding:const EdgeInsets.fromLTRB(16, 0, 16, 12),
+          child: textWidget("NEW Openings", Colors.black, FontWeight.w500, 20)
         ),
         AspectRatio(
           aspectRatio: 1,

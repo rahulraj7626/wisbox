@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nexmat/imageToStorage/getImageUrl.dart';
 import 'package:nexmat/pages/dashboard/home/widgets/deal_of_ther_slider.dart';
 import 'package:nexmat/pages/dashboard/home/widgets/home_category.dart';
@@ -16,6 +17,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nexmat/app_configs/app_assets.dart';
 
 import 'package:nexmat/pages/profile/profile_page.dart';
+import 'package:nexmat/utils/constants.dart';
 import 'package:nexmat/widgets/user_circle_avatar.dart';
 
 class HomePage extends StatefulWidget {
@@ -105,7 +107,19 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
-                    children: [Icon(Icons.search), Text("Search")],
+                    children: [Icon(Icons.search), 
+                    const SizedBox(width: 5,),
+                     Text(
+                
+                "Search",
+                style: GoogleFonts.poppins(
+                  color: Colorconstants.color747D88,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                  fontSize:16,
+                ),
+                textScaleFactor: 1,
+              )],
                   ),
                 ),
               ),

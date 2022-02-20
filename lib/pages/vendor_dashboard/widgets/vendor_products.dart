@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nexmat/pages/dashboard/home/widgets/deal_of_ther_slider.dart';
 import 'package:nexmat/pages/dashboard/home/widgets/recomended_products_slider.dart';
+import 'package:nexmat/utils/constants.dart';
 
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
@@ -14,11 +15,17 @@ class VendorProducts extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.fromLTRB(16, 0, 16, 4),
-          child: Text(
-            "Add product to Customer's cart",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+         Padding(
+          padding:const EdgeInsets.fromLTRB(16, 25, 16, 4),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const[
+              Text(
+                "Add product to Customer's cart",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+              Icon(Icons.search,color: Colors.grey,)
+            ],
           ),
         ),
         SizedBox(
@@ -104,25 +111,25 @@ class DealOfDayProduct extends StatelessWidget {
             fit: BoxFit.cover,
           )),
           Positioned(
-              right: 22,
+              right: 15,
               top: 0,
-              width: 48,
-              height: 70,
+              width: 43,
+              height: 60,
               child: CustomPaint(
                 painter: OfferCustomPaint(),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
+                    children:  [
                       Text(
                         "20%",
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w600),
+                            color: Colorconstants.color472198, fontWeight: FontWeight.w600),
                       ),
                       Text(
-                        "off",
-                        style: TextStyle(color: Colors.white),
+                        "OFF",
+                        style: TextStyle(color: Colorconstants.color472198),
                       ),
                     ],
                   ),

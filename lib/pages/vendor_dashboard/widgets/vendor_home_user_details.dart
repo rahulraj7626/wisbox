@@ -64,7 +64,7 @@ class VendorHomeUserDetails extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 130,
+            height: 180,
             child: ListView(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.all(16),
@@ -88,12 +88,12 @@ class ImageTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 12),
+      padding: const EdgeInsets.only(right: 12,bottom: 5),
       child: AspectRatio(
         aspectRatio: 1,
         child: Material(
           clipBehavior: Clip.antiAlias,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(10),
           child: Stack(
             children: [
               Positioned.fill(

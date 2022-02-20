@@ -4,7 +4,7 @@ import 'package:nexmat/pages/store/store_details_page.dart';
 import 'package:nexmat/utils/common_functions.dart';
 import 'package:nexmat/utils/constants.dart';
 import 'package:nexmat/utils/shared_preference_helper.dart';
-
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 ///
 /// Created by Sunil Kumar (sunil@smarttersstudio.com)
 /// On 31-10-2021 08:51 PM
@@ -46,6 +46,16 @@ class NearByShopTile extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                           RatingBarIndicator(
+                          rating: 4.5,
+                          itemBuilder: (context, index) => const Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          itemCount: 5,
+                          itemSize: 15,
+                          direction: Axis.horizontal,
+                        ),
                         Text(
                           "Store Name",
                           style: const TextStyle(

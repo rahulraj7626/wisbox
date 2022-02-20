@@ -35,7 +35,7 @@ class _WalletPageState extends State<WalletPage> {
             ),
               searchBox(),
                  Padding(
-              padding: const EdgeInsets.all(30),
+              padding: const EdgeInsets.all(15),
               child: Container(
                 height: 230,
                 width: MediaQuery.of(context).size.width,
@@ -54,7 +54,8 @@ class _WalletPageState extends State<WalletPage> {
                       ],
                     ),
                     Container(
-                      margin: const EdgeInsets.only(left: 0,right: 0,top: 10,bottom: 10),
+                   
+                      margin: const EdgeInsets.only(left: 0,right: 0,top: 10,bottom: 5),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -98,7 +99,7 @@ class _WalletPageState extends State<WalletPage> {
             Expanded(
               child:   ListView.builder(
                 padding: EdgeInsets.zero,
-                physics: NeverScrollableScrollPhysics(),
+                //physics: NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
@@ -191,8 +192,12 @@ class _WalletPageState extends State<WalletPage> {
     return Container(
      // margin: const EdgeInsets.only(left:5,right: 5,top: 5,bottom: 5),
                         height: 70,
-                        width: MediaQuery.of(context).size.width/2.5,
-                        color: Colorconstants.color8E81F4,
+                        width: MediaQuery.of(context).size.width/2.4,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                             color: Colorconstants.color8E81F4,
+                        ),
+                     
                         child: Row(
                           children: [
                             Container(

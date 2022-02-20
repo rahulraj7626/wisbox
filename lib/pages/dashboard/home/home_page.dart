@@ -107,19 +107,22 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
-                    children: [Icon(Icons.search), 
-                    const SizedBox(width: 5,),
-                     Text(
-                
-                "Search",
-                style: GoogleFonts.poppins(
-                  color: Colorconstants.color747D88,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.normal,
-                  fontSize:16,
-                ),
-                textScaleFactor: 1,
-              )],
+                    children: [
+                      Icon(Icons.search),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Search",
+                        style: GoogleFonts.poppins(
+                          color: Colorconstants.color747D88,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                        ),
+                        textScaleFactor: 1,
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -167,95 +170,23 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 16),
           const NearByIndustryWidget(),
           const NearByStores(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Text(
-              "Sponsored Ads",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 1.3,
-            child: Image.network(
-              "https://image.freepik.com/free-vector/big-diwali-sale-banner-with-crackers-decoration_1017-21252.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
+          sponsoredAds(context),
+
           const NearByStores(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Text(
-              "Sponsored Ads",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 1.3,
-            child: Image.network(
-              "https://image.freepik.com/free-vector/big-diwali-sale-banner-with-crackers-decoration_1017-21252.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
+          sponsoredAds(context),
+
           const NearByStores(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Text(
-              "Sponsored Ads",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 1.3,
-            child: Image.network(
-              "https://image.freepik.com/free-vector/big-diwali-sale-banner-with-crackers-decoration_1017-21252.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
+          sponsoredAds(context),
+
           const NearByStores(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Text(
-              "Sponsored Ads",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 1.3,
-            child: Image.network(
-              "https://image.freepik.com/free-vector/big-diwali-sale-banner-with-crackers-decoration_1017-21252.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
+          sponsoredAds(context),
+
           const NearByStores(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Text(
-              "Sponsored Ads",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 1.3,
-            child: Image.network(
-              "https://image.freepik.com/free-vector/big-diwali-sale-banner-with-crackers-decoration_1017-21252.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
+          sponsoredAds(context),
+
           const NearByStores(),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Text(
-              "Sponsored Ads",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 1.3,
-            child: Image.network(
-              "https://image.freepik.com/free-vector/big-diwali-sale-banner-with-crackers-decoration_1017-21252.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
+          sponsoredAds(context),
+
           const NearByStores(),
           const SizedBox(height: 12),
           // const Text(
@@ -273,6 +204,54 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 54),
         ],
       ),
+    );
+  }
+
+  Column sponsoredAds(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
+          child: Text(
+            "Sponsored Ads",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+        ),
+        SizedBox(
+          height: 300,
+          width: MediaQuery.of(context).size.width,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: AspectRatio(
+                  aspectRatio: 1.3,
+                  child: Image.network(
+                    "https://image.freepik.com/free-vector/big-diwali-sale-banner-with-crackers-decoration_1017-21252.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 10,
+                top: 10,
+                child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.white),
+                    child: const Center(
+                      child: Icon(
+                        Icons.shopping_cart,
+                        color: Colors.grey,
+                        size: 18,
+                      ),
+                    )),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
